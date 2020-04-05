@@ -15,7 +15,7 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import GridSearchCV,train_test_split 
 from sklearn.metrics import mean_absolute_error
 
-data=pd.read_csv("C:\\Users\\Ram\\Desktop\\graduate-admissions\\Admission_Predict.csv");
+data=pd.read_csv("C:\\Users\\Ram\\Desktop\\graduate-admissions-predictor\\Admission_Predict.csv");
 data
 admissions = data.drop('Serial No.',axis = 1)
 admissions
@@ -27,7 +27,7 @@ admissions
 x = admissions.drop('Chance_of_Admit',axis = 1)
 y = admissions['Chance_of_Admit']
 
-X_train,X_val,y_train,y_val = train_test_split(x,y,test_size = .20,random_state = 123)
+X_train,X_val,y_train,y_val = train_test_split(x,y,test_size = .30,random_state = 123)
 
 
 # In[101]:
