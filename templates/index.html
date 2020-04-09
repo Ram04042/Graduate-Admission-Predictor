@@ -18,13 +18,15 @@
 
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
-    	<input type="text" name="gre_score" placeholder="GRE Score" required="required" />
-        <input type="text" name="toefl_score" placeholder="TOEFL Score" required="required" />
-        <input type="text" name="university_rating" placeholder="University Rating" required="required" />
-        <input type="text" name="sop" placeholder="SOP" required="required" />
-        <input type="text" name="lor" placeholder="LOR" required="required" />
-        <input type="text" name="cgpa" placeholder="CGPA" required="required" />
-		<input type="text" name="research" placeholder="Research" required="required" />
+    	<input type="text" id="gre_score" name="gre_score" placeholder="GRE Score" required="required" /> <span class="error_form" id="gre_error"></span>
+        <input type="text" id="toefl_score" name="toefl_score" placeholder="TOEFL Score" required="required" /> <span class="error_form" id="toefl_error"></span>
+        <input type="text" id="uni_rating" name="university_rating" placeholder="University Rating" required="required" /> <span class="error_form" id="uni_error"></span>
+        <input type="text" id="sop" name="sop" placeholder="SOP" required="required" />  <span class="error_form" id="sop_error"></span>
+        <input type="text" id="lor" name="lor" placeholder="LOR" required="required" />  <span class="error_form" id="lor_error"></span>
+        <input type="text" id="cgpa" name="cgpa" placeholder="CGPA" required="required" /> <span class="error_form" id="cgpa_error"></span>
+		Research Paper published ?
+		<input type="radio" name="research" required value="1">Yes
+		<input type="radio" name="research" value="0"> No
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
     </form>
 
@@ -36,4 +38,9 @@
 
 
 </body>
-</html>
+
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script type=text/javascript src="{{
+  url_for('static', filename='js/main.js') }}"></script>
+ 
+ </html>
